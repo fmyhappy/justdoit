@@ -23,8 +23,8 @@ public class TestJson {
 	}
 	@Test
 	public void test2(){
-		User user= userMapper.getUserByName("admin");
-		System.out.println(user);
+//		User user= userMapper.getUserByName("admin");
+//		System.out.println(user);
 
 	}
 

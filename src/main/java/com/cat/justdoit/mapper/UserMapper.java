@@ -8,4 +8,5 @@ import com.cat.justdoit.entity.WdcyUserDetails;
 @Repository
 public interface UserMapper {
     public User loadByUserName(String username);
+    public void saveUser(User user);
 }

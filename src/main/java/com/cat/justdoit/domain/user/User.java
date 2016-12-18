@@ -2,6 +2,7 @@ package com.cat.justdoit.domain.user;
 
 
 import com.cat.justdoit.domain.AbstractDomain;
+import org.apache.ibatis.annotations.Mapper;
 
 import java.util.ArrayList;
 import java.util.Date;

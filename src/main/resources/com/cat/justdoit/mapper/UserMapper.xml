@@ -28,6 +28,7 @@
 
     <insert id="saveUser" parameterType="com.cat.justdoit.domain.user.User">
         INSERT INTO user_(guid,create_time,archived,email,password,phone,username,default_user,last_login_time)
+        VALUES(#{guid},#{createTime},#{archived},#{email},#{password},#{phone},#{username},#{defaultUser},#{lastLoginTime})
     </insert>
 
 </mapper>
