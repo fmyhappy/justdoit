@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <!--全局setting-->
+
+    <!--配置别名-->
+    <typeAliases>
+        <package name="com.cat.entity.custom"/>
+    </typeAliases>
+
+
+
+    <!--不必配置mapper 因使用spring的mapper扫描器-->
+    <!--<mappers>-->
+
+        <!--<mapper resource="com/cat/mapping/UserMapper.xml"></mapper>-->
+        <!--<package name="com.cat.mapping"/>-->
+        <!--<mapper resource="com.zero.showcase.mapping/ItemsMapper.xml"></mapper>-->
+        <!--<mapper resource="com.zero.showcase.mapping/OrderdetailMapper.xml"></mapper>-->
+        <!--<mapper resource="com.zero.showcase.mapping/OrdersMapper.xml"></mapper>-->
+        <!--<mapper resource="com.zero.showcase.mapping/UserMapper.xml"></mapper>-->
+    <!--</mappers>-->
+    
+    
+
+
+</configuration>
