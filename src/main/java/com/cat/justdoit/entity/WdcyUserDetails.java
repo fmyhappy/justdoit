@@ -47,8 +47,11 @@ public class WdcyUserDetails implements UserDetails {
 //			for (Privilege privilege : privileges) {
 //				this.grantedAuthorities.add(new SimpleGrantedAuthority(ROLE_PREFIX + privilege.name()));
 //			}
-			for (String s : user.getPrivilegeStr().split(",")) {
-				this.grantedAuthorities.add(new SimpleGrantedAuthority(ROLE_PREFIX +s));
+			if (user.getPrivilegeStr()!=null){
+
+				for (String s : user.getPrivilegeStr().split(",")) {
+					this.grantedAuthorities.add(new SimpleGrantedAuthority(ROLE_PREFIX +s));
+				}
 			}
 		}
 	}
