@@ -33,7 +33,7 @@ public class UserService implements UserDetailsService {
 		}
 		List<GrantedAuthority> authorities = (List<GrantedAuthority>) new WdcyUserDetails(user).getAuthorities();
 		System.out.println(authorities);
-		System.out.println("------------00000000000000000000000");
+
 
 		return new WdcyUserDetails(user);
 	}
