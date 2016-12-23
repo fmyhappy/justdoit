@@ -1,8 +1,5 @@
 package com.cat.justdoit.web.controller.mobile;
 
-import org.springframework.context.annotation.Role;
-import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.security.config.annotation.authentication.configuration.EnableGlobalAuthentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 

@@ -9,14 +9,14 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="_csrf_header" content="${_csrf.headerName}" />
-<title>欢迎登录</title>
+<title>欢迎注册</title>
 </head>
 <body>
-	<form action="<%=path%>/login" method="post">
+	<form action="<%=path%>/user" method="post">
 		用户名:<input type="text" name="username"><br> <br> 
 		密    码:<input type="text" name="password"> 
-		<%-- <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />  --%>
-		<input type="submit" value="登录">
+		 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+		<input type="submit" value="注册">
 	</form>
 </body>
 </html>

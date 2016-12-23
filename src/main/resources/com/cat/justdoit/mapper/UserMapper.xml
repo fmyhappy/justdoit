@@ -13,22 +13,50 @@
 
         <result column="last_login_time" property="lastLoginTime" jdbcType="TIMESTAMP"/>
         <result column="default_user" property="defaultUser" jdbcType="BOOLEAN"/>
-        <result property="privilegeStr" column="privilege" jdbcType="VARCHAR" ></result>
+        <result property="privilegeStr" column="privilege" jdbcType="VARCHAR"></result>
     </resultMap>
-    <select id="getUserByName" parameterType="string"
+
+
+    <select id="loadByUserName" parameterType="string"
             resultMap="resultMap">
 		select * from user_ u LEFT JOIN user_privilege p ON u.id = p.user_id where username = #{username}
 	</select>
-    <!--<select id="getUser" parameterType="string" resultMap="resultMap">
-	    select * from t_users u LEFT JOIN t_role r on u.roleid = r.id where u.username = #{username}
-	</select> -->
+
     <select id="getRoleByUID" parameterType="int" resultType="string">
         SELECT privilege from user_privilege WHERE userid = #{id}
     </select>
 
     <insert id="saveUser" parameterType="com.cat.justdoit.domain.user.User">
-        INSERT INTO user_(guid,create_time,archived,email,password,phone,username,default_user,last_login_time)
-        VALUES(#{guid},#{createTime},#{archived},#{email},#{password},#{phone},#{username},#{defaultUser},#{lastLoginTime})
+        INSERT INTO user_
+        <set>
+            <if test="guid != null">
+                guid = #{guid},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime},
+            </if>
+            <if test="archived != null">
+                archived = #{archived},
+            </if>
+            <if test="email != null">
+                email = #{email},
+            </if>
+            <if test="password != null">
+                password = #{password},
+            </if>
+            <if test="phone != null">
+                phone = #{phone},
+            </if>
+            <if test="username != null">
+                username = #{username},
+            </if>
+            <if test="defaultUser != null">
+                default_user = #{defaultUser},
+            </if>
+            <if test="lastLoginTime != null">
+                last_login_time = #{lastLoginTime},
+            </if>
+        </set>
     </insert>
 
 </mapper>

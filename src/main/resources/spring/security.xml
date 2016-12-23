@@ -66,10 +66,10 @@
     </http>
 
     <http auto-config="true" disable-url-rewriting="true" create-session="ifRequired"
-          authentication-manager-ref="authenticationManager">
+          authentication-manager-ref="authenticationManager" >
         <csrf disabled="true"/>
         <!--<intercept-url pattern="/oauth/**" access="hasRole('ROLE_USER')"/>-->
-        <!--<intercept-url pattern="/**" access="IS_AUTHENTICATED_ANONYMOUSLY"/>-->
+        <intercept-url pattern="/login" access="isAnonymous"/>
 
         <form-login login-page="/login.jsp" login-processing-url="/login"
                     username-parameter="username" password-parameter="password"
@@ -77,7 +77,6 @@
                     authentication-failure-handler-ref="auth-fail"/>
         <logout logout-success-url="/index.jsp" logout-url="/logout.do"/>
         <anonymous/>
-        <csrf disabled="true"/>
     </http>
 
     <authentication-manager id="oauth2AuthenticationManager">
